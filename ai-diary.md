@@ -9,3 +9,8 @@ This document summarizes the work done with the assistance of an AI.
     *   **Manual Trigger:** The workflow is triggered manually, giving you full control over deployments.
     *   **Customizable Inputs:** You can specify the worker file and application name at the time of deployment.
     *   **Secure Credentials:** Your Cloudflare API token and account ID are managed securely using GitHub repository secrets.
+
+## Update - 2025-10-23
+
+*   **Configuration as Code:** Introduced a `wrangler.toml` file to manage the worker's `compatibility_date`, following best practices. This removes the hardcoded value from the workflow file.
+*   **Workflow Refinement:** Updated the GitHub Actions workflow to read the `compatibility_date` from the `wrangler.toml` file, making the workflow cleaner and more maintainable.

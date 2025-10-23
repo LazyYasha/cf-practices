@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       worker_file:
-        description: 'Path to the worker file'
+        description: 'Filename of the worker in the src/workers directory'
         required: true
       worker_name:
         description: 'Name of the worker'
@@ -21,4 +21,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy ${{ github.event.inputs.worker_file }} --name ${{ github.event.inputs.worker_name }}
+          command: deploy src/workers/${{ github.event.inputs.worker_file }} --name ${{ github.event.inputs.worker_name }}
